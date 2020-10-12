@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from aura.poe.farm/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 11 Oct 2020 21:43:54 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta charset="UTF-8">
+	<title>PoE Aura Calc</title>
+
+	<script type="application/javascript" src="../code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="script/data.js"></script>
+	<script src="script/lz-string.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style/style.css" />
+</head>
+<body>
+	<a href="https://github.com/shadowmoose/poe-aura-calc" target="_blank">Info</a> | <a href="index.html">Clear Page</a><br>
+	<label>Total % Increased Aura effect:
+	<input id="increase" type="number" value="0" min="0"
+		title="Include global increases from all passives and gear.
+		The tree alone has 69%
+		+15% from Victario's Influence
+		+3% from Conqueror's Potency
+		+10% from Guardian
+		+5% from Necromancer
+		+20% from Champion"/>
+	</label>
+	<br>
+	<label>Total % Increased Effect of Auras on You:
+	<input id="buffEffect" type="number" value="0" min="0"
+		title="Include increased Effect of Auras on You from all passives and gear."/>
+	</label>
+	<br>
+	<label>Precise Commander
+	<input id="preciseCommander" type="checkbox"
+		title="Precise Commander"/>
+	</label>
+	<br>
+	<label>Replenishing Presence
+	<input id="replenishingPresence" type="checkbox"
+		title="Replenishing Presence"/>
+	</label>
+	<br>
+	<label>
+		Ascendancy:
+		<select id="asc_choice">
+			<option value="necromancer" title="Commander of Darkness">Necromancer</option>
+			<option value="guardian" title="Unwavering Faith, Radiant Faith, Unwavering Crusade, Radiant Crusade">Guardian</option>
+			<option value="necrian" title="Necromancer + Guardian">Ascendant: Guardian/Necromancer</option>
+			<option value="champion" title="Inspirational">Champion</option>
+		</select>
+		<span id="saved_vals"></span>
+	</label>
+	<hr />
+	<table>
+		<tr>
+			<td class="left_td">
+				<div id="output"></div>
+			</td>
+			<td>
+				<h4 id="aura_count" class="aura_count"></h4>
+				<h2>Path of Building:</h2>
+				<h5>(Copy the below lines, 'Create Custom' in PoB under 'Items', and paste it in) </h5>
+
+				<div class="totals">
+					<span class="flavor_text">
+						Aura Bot<br>
+						Aquamarine Flask<br>
+						Quality: 20<br>
+						LevelReq: 0<br>
+						Implicits: 1<br>
+						Is Awesome<br>
+					</span>
+					<div id="totals"></div>
+				</div>
+			</td>
+		</tr>
+	</table>
+</body>
+
+<script>
+	let d;
+	$( document ).ready(function() {
+		d = new Data();
+	});
+
+	$('#increase').on('change', ()=>{
+		d.calculate();
+	});
+	$('#buffEffect').on('change', ()=>{
+		d.calculate();
+	});
+	$('#preciseCommander').on('change', ()=>{
+		d.calculate();
+	});
+	$('#replenishingPresence').on('change', ()=>{
+		d.calculate();
+	});
+	$("#asc_choice").on('change', () => {
+		d.calculate();
+	});
+</script>
+
+
+<!-- Mirrored from aura.poe.farm/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 11 Oct 2020 21:43:55 GMT -->
+</html>

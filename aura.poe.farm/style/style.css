@@ -1,0 +1,69 @@
+body{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: #cfcfcf;
+}
+
+.stat_block{
+    margin-bottom: 10px;
+}
+
+.total_mod{
+    display:block;
+}
+
+.gen_input{
+    width: 30px;
+    color: red;
+    background: #f4f4f4;
+}
+
+.lvl_input{
+    width: 30px;
+    color: blue;
+}
+
+.effect_input{
+	width: 40px;
+    color: green;
+}
+
+.disabled_gem{
+    color: #919191 !important;
+}
+
+.gem_title{
+    font-weight: bold;
+}
+
+.totals{
+    background: #444d5d;
+    padding: 3px;
+    max-width: 600px;
+}
+
+.flavor_text{
+    color: #af6025;
+    font-weight: bold;
+}
+
+.aura_count{
+    color: #444d5d;
+}
+
+.input_value {
+    display: block;
+    cursor: pointer;
+}
+
+table{
+    width: 100%;
+}
+
+a{
+    font-weight: bold;
+    color: #444d5d;
+}
+
+a:hover {
+    text-shadow: 1px 1px;
+}
